@@ -1,3 +1,5 @@
+package com.wanghz.mytomcat;
+
 public abstract class MyServlet {
 
     public abstract void doGet(MyRequest myRequest, MyResponse myResponse);

@@ -1,3 +1,5 @@
+package com.wanghz.mytomcat;
+
 import java.io.IOException;
 import java.io.InputStream;
 
@@ -21,7 +23,7 @@ public class MyRequest {
 
     @Override
     public String toString() {
-        return "MyRequest{" +
+        return "com.wanghz.mytomcat.MyRequest{" +
                 "method='" + method + '\'' +
                 ", url='" + url + '\'' +
                 '}';

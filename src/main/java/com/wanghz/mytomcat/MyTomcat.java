@@ -1,3 +1,5 @@
+package com.wanghz.mytomcat;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -32,15 +34,15 @@ public class MyTomcat {
 
         try {
 
-            System.out.println("MyTomcat is start...");
+            System.out.println("com.wanghz.mytomcat.MyTomcat is start...");
 
             while (true) {
                 Socket socket = serverSocket.accept();
                 /*InputStream inputStream = socket.getInputStream();
                 OutputStream outputStream = socket.getOutputStream();
 
-                MyRequest myRequest = new MyRequest(inputStream);
-                MyResponse myResponse = new MyResponse(outputStream);
+                com.wanghz.mytomcat.MyRequest myRequest = new com.wanghz.mytomcat.MyRequest(inputStream);
+                com.wanghz.mytomcat.MyResponse myResponse = new com.wanghz.mytomcat.MyResponse(outputStream);
 
                 dispatch(myRequest, myResponse);
                 socket.close();*/
@@ -74,7 +76,7 @@ public class MyTomcat {
     }
 
     private void doStart() {
-        System.out.println("MyTomcat is start...");
+        System.out.println("com.wanghz.mytomcat.MyTomcat is start...");
         while (true){
             try {
                 Socket client = serverSocket.accept();

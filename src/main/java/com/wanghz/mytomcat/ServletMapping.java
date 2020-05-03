@@ -1,3 +1,5 @@
+package com.wanghz.mytomcat;
+
 public class ServletMapping {
     private String servletName;
     private String url;

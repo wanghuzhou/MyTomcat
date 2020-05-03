@@ -1,10 +1,12 @@
+package com.wanghz.mytomcat;
+
 import java.io.IOException;
 
-public class FindGirlServlet extends MyServlet {
+public class HelloWorldServlet extends MyServlet {
     @Override
     public void doGet(MyRequest myRequest, MyResponse myResponse) {
         try {
-            myResponse.write("get girl");
+            myResponse.write("hello world");
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -13,7 +15,7 @@ public class FindGirlServlet extends MyServlet {
     @Override
     public void doPost(MyRequest myRequest, MyResponse myResponse) {
         try {
-            myResponse.write("post girl");
+            myResponse.write("hello world");
         } catch (IOException e) {
             e.printStackTrace();
         }
