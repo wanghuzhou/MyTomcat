@@ -38,15 +38,7 @@ public class MyTomcat {
 
             while (true) {
                 Socket socket = serverSocket.accept();
-                /*InputStream inputStream = socket.getInputStream();
-                OutputStream outputStream = socket.getOutputStream();
-
-                com.wanghz.mytomcat.MyRequest myRequest = new com.wanghz.mytomcat.MyRequest(inputStream);
-                com.wanghz.mytomcat.MyResponse myResponse = new com.wanghz.mytomcat.MyResponse(outputStream);
-
-                dispatch(myRequest, myResponse);
-                socket.close();*/
-                new Thread(() -> {
+                ThreadUtils.fixededThreadPool.execute(() -> {
                     try {
                         InputStream inputStream = socket.getInputStream();
                         OutputStream outputStream = socket.getOutputStream();
@@ -59,7 +51,7 @@ public class MyTomcat {
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
-                }).start();
+                });
             }
 
         } catch (IOException e) {
@@ -69,20 +61,6 @@ public class MyTomcat {
                 serverSocket.close();
             } catch (IOException e) {
                 e.printStackTrace();
-            }
-        }
-
-//        new Thread(() -> doStart()).start();
-    }
-
-    private void doStart() {
-        System.out.println("com.wanghz.mytomcat.MyTomcat is start...");
-        while (true){
-            try {
-                Socket client = serverSocket.accept();
-                new ClientHandler(client).start();
-            }catch (IOException e){
-                System.out.println("服务端异常");
             }
         }
     }

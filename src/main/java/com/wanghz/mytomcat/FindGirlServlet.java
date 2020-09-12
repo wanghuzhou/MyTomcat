@@ -5,11 +5,7 @@ import java.io.IOException;
 public class FindGirlServlet extends MyServlet {
     @Override
     public void doGet(MyRequest myRequest, MyResponse myResponse) {
-        try {
-            myResponse.write("get girl");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        doPost(myRequest, myResponse);
     }
 
     @Override
