@@ -38,7 +38,7 @@ public class MyTomcat {
 
             while (true) {
                 Socket socket = serverSocket.accept();
-                ThreadUtils.fixededThreadPool.execute(() -> {
+                ThreadUtils.fixedThreadPool.execute(() -> {
                     try {
                         InputStream inputStream = socket.getInputStream();
                         OutputStream outputStream = socket.getOutputStream();
